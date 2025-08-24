@@ -30,6 +30,6 @@ proxy:
     - n8n.blanchefoodtruck.it
   app_port: 5678
   healthcheck:
-    path: /
-    interval: 2
-    timeout: 2
+    path: /healthz         # n8n health endpoint
+    interval: 2            # seconds between checks
+    timeout: 120           # how long kamal-proxy waits before giving up
