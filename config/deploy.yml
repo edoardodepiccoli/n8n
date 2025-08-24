@@ -1,5 +1,5 @@
 service: n8n
-image: n8nio/n8n:latest
+image: n8nio/n8n
 
 servers:
   - 188.245.178.80
@@ -15,7 +15,11 @@ registry:
     - KAMAL_REGISTRY_PASSWORD
 
 volumes:
-  - "/var/lib/n8n:/home/node/.n8n"
+  - /var/lib/n8n:/home/node/.n8n
+  - /home/ubuntu/.n8n:/home/node/.n8n
+
+builder:
+  arch: arm64
 
 ssh:
   user: root
