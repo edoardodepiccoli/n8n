@@ -8,6 +8,12 @@ proxy:
   ssl: true
   hosts:
     - n8n.blanchefoodtruck.it
+  app_port: 5678        # make sure this matches the port n8n listens on
+  healthcheck:
+    path: /healthz       # appropriate for n8n
+    interval: 10        # seconds between checks
+    timeout: 5          # how long to wait per check
+
 
 registry:
   username: edoardodep
@@ -22,10 +28,3 @@ builder:
 
 ssh:
   user: root
-
-healthcheck:
-  path: /healthz
-  port: "5678"
-  interval: 10s
-  max_attempts: 20
-  log_lines: 200
