@@ -5,15 +5,13 @@ servers:
   - 188.245.178.80
 
 builder:
-  arch: amd64
+  arch: [amd64, arm64]
 
 registry:
   username: edoardodep
-  password: <%= ENV['KAMAL_REGISTRY_PASSWORD'] %>  # or keep it in .kamal/secrets
+  password: <%= ENV['KAMAL_REGISTRY_PASSWORD'] %>
 
 env:
-  clear:
-    PORT: "5678"                  # n8n listens here inside the container
   secret:
     - N8N_BASIC_AUTH_ACTIVE
     - N8N_BASIC_AUTH_USER
@@ -30,8 +28,8 @@ proxy:
   ssl: true
   hosts:
     - n8n.blanchefoodtruck.it
-  app_port: 5678                  # where kamal-proxy forwards to
+  app_port: 5678
   healthcheck:
-    path: /                       # n8n's root responds OK
+    path: /
     interval: 2
     timeout: 2
