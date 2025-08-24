@@ -15,8 +15,7 @@ registry:
     - KAMAL_REGISTRY_PASSWORD
 
 volumes:
-  - /var/lib/n8n:/home/node/.n8n
-  - /home/ubuntu/.n8n:/home/node/.n8n
+  - n8n_data:/home/node/.n8n
 
 builder:
   arch: arm64
