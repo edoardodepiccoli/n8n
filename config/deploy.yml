@@ -8,11 +8,11 @@ proxy:
   ssl: true
   hosts:
     - n8n.blanchefoodtruck.it
-  app_port: 5678        # make sure this matches the port n8n listens on
+  app_port: 5678
   healthcheck:
-    path: /healthz       # appropriate for n8n
-    interval: 10        # seconds between checks
-    timeout: 5          # how long to wait per check
+    path: /healthz
+    interval: 10
+    timeout: 5
 
 
 registry:
