@@ -22,3 +22,10 @@ builder:
 
 ssh:
   user: root
+
+healthcheck:
+  path: /healthz
+  port: "5678"
+  interval: 10s
+  max_attempts: 20
+  log_lines: 200
