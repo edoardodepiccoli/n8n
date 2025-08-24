@@ -1,0 +1,37 @@
+service: n8n
+image: edoardodep/n8n
+
+servers:
+  - 188.245.178.80
+
+builder:
+  arch: amd64
+
+registry:
+  username: edoardodep
+  password: <%= ENV['KAMAL_REGISTRY_PASSWORD'] %>  # or keep it in .kamal/secrets
+
+env:
+  clear:
+    PORT: "5678"                  # n8n listens here inside the container
+  secret:
+    - N8N_BASIC_AUTH_ACTIVE
+    - N8N_BASIC_AUTH_USER
+    - N8N_BASIC_AUTH_PASSWORD
+    - N8N_PROTOCOL
+    - N8N_HOST
+    - N8N_PORT
+    - N8N_ENCRYPTION_KEY
+
+volumes:
+  - /home/ubuntu/.n8n:/home/node/.n8n
+
+proxy:
+  ssl: true
+  hosts:
+    - app.blanchefoodtruck.it
+  app_port: 5678                  # where kamal-proxy forwards to
+  healthcheck:
+    path: /                       # n8n's root responds OK
+    interval: 2
+    timeout: 2
