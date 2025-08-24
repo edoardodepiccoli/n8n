@@ -1,5 +1,5 @@
 service: n8n
-image: n8nio/n8n
+image: n8nio/n8n:latest
 
 servers:
   - 188.245.178.80
@@ -16,9 +16,6 @@ registry:
 
 volumes:
   - "/var/lib/n8n:/home/node/.n8n"
-
-builder:
-  arch: arm64
 
 ssh:
   user: root
