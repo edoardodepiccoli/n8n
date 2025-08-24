@@ -1,5 +1,5 @@
 service: n8n
-image: n8nio/n8n
+image: edoardodep/n8n
 
 servers:
   - 188.245.178.80
