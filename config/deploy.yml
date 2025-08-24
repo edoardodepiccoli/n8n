@@ -19,7 +19,7 @@ volumes:
   - /home/ubuntu/.n8n:/home/node/.n8n
 
 builder:
-  multiarch: true
+  arch: arm64
 
 ssh:
   user: root
