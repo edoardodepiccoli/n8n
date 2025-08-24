@@ -29,7 +29,7 @@ volumes:
 proxy:
   ssl: true
   hosts:
-    - app.blanchefoodtruck.it
+    - n8n.blanchefoodtruck.it
   app_port: 5678                  # where kamal-proxy forwards to
   healthcheck:
     path: /                       # n8n's root responds OK
