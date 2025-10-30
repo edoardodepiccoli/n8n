@@ -8,7 +8,6 @@ proxy:
   ssl: true
   hosts:
     - edodep.com
-    - www.edodep.com
   app_port: 5678
   healthcheck:
     path: /healthz
