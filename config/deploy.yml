@@ -7,7 +7,7 @@ servers:
 proxy:
   ssl: true
   hosts:
-    - n8n.blanchefoodtruck.it
+    - n8n.edodep.com
   app_port: 5678
   healthcheck:
     path: /healthz
