@@ -7,7 +7,6 @@ servers:
 proxy:
   ssl: true
   hosts:
-    - n8n.edodep.com
     - edodep.com
     - www.edodep.com
   app_port: 5678
